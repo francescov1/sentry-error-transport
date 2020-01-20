@@ -1,6 +1,6 @@
 {
-  "name": "sentry-error-transport",
-  "version": "1.0.1",
+  "name": "sentry-error-transport-2",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
