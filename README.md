@@ -7,6 +7,12 @@ A Sentry transport for Winston.
 * Sends errors to Sentry using [`Sentry.withScope` and `Sentry.captureException`](https://docs.sentry.io/enriching-error-data/scopes/?platform=node#local-scopes)
 * Extracts user and error stack for Sentry, along with any extra metadata
 
+# Installation
+
+```
+npm install sentry-error-transport
+```
+
 # Usage
 
 ### Configure Winston
