@@ -9,6 +9,7 @@
   "keywords": [],
   "author": "Francesco Virga",
   "license": "ISC",
+  "repository": "https://github.com/francescov1/sentry-error-transport.git",
   "dependencies": {
     "@sentry/node": "^5.11.1",
     "winston-transport": "^4.3.0"
