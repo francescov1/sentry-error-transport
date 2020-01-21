@@ -1,6 +1,6 @@
 # Sentry Error Transport
 
-A Sentry transport for Winston.
+A tiny Sentry transport for Winston.
 
 ## Features
 
@@ -17,10 +17,12 @@ npm install sentry-error-transport
 
 ### Configure Winston
 
+You can create a new transport object for Winston by initializing the `SentryTransport` class. It accepts an object containing sentry and transport configuration. The `level` property passed in will dictate which log level is passed on to Sentry.
+
 ```javascript
 "use strict";
 const winston = require("winston");
-const { SentryTransport } = require("sentry-error-transport");
+const SentryTransport = require("sentry-error-transport");
 
 const logger = winston.createLogger({
   level: "info",
@@ -30,6 +32,21 @@ const logger = winston.createLogger({
     new SentryTransport({ level: "error", sentry: { dns: "{SENTRY_URL}" } })
   ]
 });
+```
+
+### Format
+
+```javascript
+const config = {
+  sentry: {
+    dns: "{SENTRY_URL}",
+    /* any other sentry config goes here */
+  },
+  level: "error",
+  /* any other winston-transport config goes here */
+}
+
+const transport = new SentryTransport(config)
 ```
 
 ### Use logger
@@ -52,6 +69,7 @@ try {
   ...something throws an error
 }
 catch(err) {
+  // this gets sent to the Sentry transport
   logger.error(err, { user: req.user, stack: err.stack })
 }
 ```
@@ -61,7 +79,6 @@ catch(err) {
 The Sentry object can be accessed at `SentryTransport.Sentry` property
 
 ```javascript
-const { SentryTransport } = require("sentry-error-transport");
-
+const SentryTransport = require("sentry-error-transport");
 const { Sentry } = SentryTransport;
 ```
