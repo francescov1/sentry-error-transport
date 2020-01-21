@@ -66,7 +66,7 @@ logger.error(new Error("Something went wrong"), {
 //  ============= or =============
 
 try {
-  ...something throws an error
+  // something throws an error...
 }
 catch(err) {
   // this gets sent to the Sentry transport
