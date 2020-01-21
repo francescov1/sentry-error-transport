@@ -1,7 +1,7 @@
 {
   "name": "sentry-error-transport",
-  "version": "1.0.2",
-  "description": "",
+  "version": "1.0.3",
+  "description": "A tiny Sentry transport for Winston.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
